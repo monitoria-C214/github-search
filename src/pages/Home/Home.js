@@ -2,18 +2,22 @@ import React, { useState, useEffect } from "react"
 import './Home.css'
 
 export default function Home() {
-  const [name, setName] = useState('')
-  const [username, setUsername] = useState('')
-  const [location, setLocation] = useState('')
-  const [followers, setFollowers] = useState('')
-  const [following, setFollowing] = useState('')
-  const [repos, setRepos] = useState('')
-  const [avatar, setAvatar] = useState('')
+  const [data, setData] = useState({
+    name: '',
+    username: '',
+    location: '',
+    followers: '',
+    following: '',
+    repos: '',
+    avatar: ''
+  })
 
   const [userInput, setUserInput] = useState('')
   const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     fetch("https://api.github.com/users/example")
       .then(res => res.json())
       .then(data => {
@@ -23,22 +27,31 @@ export default function Home() {
   }, [])
 
   const handleSetData = ({ name, login, followers, following, public_repos, avatar_url, location }) => {
-    setName(name)
-    setUsername(login)
-    setFollowers(followers)
-    setFollowing(following)
-    setRepos(public_repos)
-    setAvatar(avatar_url)
-    setLocation(location)
+    setData({
+      ...data,
+      name: name,
+      username: login,
+      location: location,
+      followers: followers,
+      following: following,
+      repos: public_repos,
+      avatar: avatar_url
+    })
+    setUserInput('')
+    setLoading(false)
   }
 
   const handleSearchSubmit = (e) => {
     e.preventDefault()
+    setLoading(true)
 
     fetch(`https://api.github.com/users/${userInput}`)
       .then(res => res.json())
       .then(data => {
-        if (data.message) setError('Usuário não encontrado!')
+        if (data.message) {
+          setError('Ops, usuário não encontrado!')
+          setLoading(false)
+        }
         else {
           handleSetData(data)
           setError('')
@@ -54,12 +67,12 @@ export default function Home() {
       </div>
 
       <div className="search">
-        <form className="form" onSubmit={handleSearchSubmit}>
+        <form className="form" onSubmit={userInput && handleSearchSubmit}>
           <input
             className='input'
             type='text'
             name="github-user"
-            placeholder="GitHub user"
+            placeholder="Github username ..."
             value={userInput}
             onChange={({ target }) => setUserInput(target.value)}
           />
@@ -67,48 +80,59 @@ export default function Home() {
         </form>
       </div>
 
-      {error ? <div>{error}</div>
-        : <div className="card">
-          <div className="card-user">
-            <div className="card-image">
-              <img
-                src={avatar}
-                alt="User Avatar"
-              />
-            </div>
-
-            <div className="card-content">
-              <h1 className="card-name">{name}</h1>
-              <span className="card-username">
-                <i class="fas fa-user" />{username}
-              </span>
-              <span className="card-location">
-                <i class="fas fa-map-marker-alt" />{location}
-              </span>
-
-              <div className="card-data">
-                <span>
-                  <i class="fas fa-user-friends" />{following} following
-                </span>
-                <span>
-                  <i class="fas fa-user-friends" />{followers}  followers
-                </span>
-                <span>
-                  <i class="fas fa-poll-h" />{repos} repos
-                </span>
+      {loading
+        ? <div className="card-loading">
+          <i class="fas fa-spinner" />
+          <span>Carregando ....</span>
+        </div>
+        : error
+          ? <div className="card-error">
+            <i className="fas fa-exclamation-triangle" />
+            <span>{error}</span>
+          </div>
+          : <div className="card">
+            <div className="card-user">
+              <div className="card-image">
+                <img
+                  src={data.avatar}
+                  alt="User Avatar"
+                />
               </div>
 
-              <div className="card-footer">
-                <a href={`https://github.com/${username}`} >
-                  <span>GitHub {username}</span>
-                </a>
+              <div className="card-content">
+                {data.name && <h1 className="card-name">{data.name}</h1>}
+                <span className="card-username">
+                  <i class="fas fa-user" />{data.username}
+                </span>
+                {data.location && <span className="card-location">
+                  <i class="fas fa-map-marker-alt" />{data.location}
+                </span>}
+
+                <div className="card-data">
+                  <span>
+                    <i class="fas fa-user-friends" />{data.following} following
+                </span>
+                  <span>
+                    <i class="fas fa-user-friends" />{data.followers} followers
+                </span>
+                  <span>
+                    <i class="fas fa-poll-h" />{data.repos} repos
+                </span>
+                </div>
+
+                <div className="card-footer">
+                  <a href={`https://github.com/${data.username}`} >
+                    <span>GitHub {data.username}</span>
+                  </a>
+
+                </div>
 
               </div>
-
             </div>
           </div>
-        </div>
+
       }
+
 
       <div className="footer">
         <span>Created by VSwerts</span>

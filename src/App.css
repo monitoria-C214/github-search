@@ -24,8 +24,9 @@ input {
 }
 
 i {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #9b9b9b;
+  opacity: 0.75;
   padding-right: 0.5rem;
 }
 
