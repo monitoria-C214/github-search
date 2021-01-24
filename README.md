@@ -1,9 +1,5 @@
 
-<p align="center"> 
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/VanessaSwerts/github-search?color=%2304D361">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/VanessaSwerts/github-search">
-  
+<p align="center">  
   <a href="https://github.com/VanessaSwerts/github-search/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/VanessaSwerts/github-search">
   </a>
