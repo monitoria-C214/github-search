@@ -1,0 +1,245 @@
+/* HEADER */
+.navbar {
+  padding: 1rem 2.5rem;
+  background-color: #8D99AE;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+
+  display: flex;
+  align-items: center;
+}
+
+.navbar i {
+  font-size: 2rem;
+  color: #2B2D42;
+  padding-right: 0.5rem;
+}
+
+.navbar span {
+  color: #2B2D42;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: var(--type-second);
+  align-items: center;
+}
+
+/* SEARCH  */
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 2rem auto;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.input {
+  border: 1px solid #fff;
+  display: block;
+  width: 18rem;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem 0 0 0.4rem;
+  background: #fff;
+  transition: 0.2s;
+}
+
+.input:hover,
+.input:focus {
+  outline: none;
+  border-color: #2B2D42;
+  background: #fff;
+  box-shadow: 0 0 0 3px #8D99AE;
+}
+
+.button {
+  font-size: 1rem;
+  font-family: var(--type-first);
+
+  cursor: pointer;
+  border: none;
+  border-radius: 0 0.4rem 0.4rem 0;
+
+  background: #2B2D42;
+  color: #EDF2F4;
+
+  min-width: 8rem;
+  padding: 0.8rem 1.2rem;
+  box-sizing: border-box;
+
+  transition: 0.1s;
+}
+
+.button:hover,
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #8D99AE, 0 0 0 4px #2B2D42;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+
+/* CARD  */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.card-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 18rem;
+  height: 33rem;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  border: 1px solid #8D99AE;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+}
+
+.card-image {
+  height: 18rem;
+  width: 100%;
+  border-radius: 0.4rem 0.4rem 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8D99AE;
+}
+
+.card-image img {
+  border-radius: 0.4rem 0.4rem 0 0;
+  border: 1px solid #8D99AE;
+
+  width: auto;
+  height: auto;
+
+  max-width: 18rem;
+  max-height: 18rem;
+}
+
+.card-content {
+  height: 15rem;
+  width: 100%;  
+  border-radius: 0 0 0.4rem 0.4rem;
+  padding: 0.6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.card-content .card-name {
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: var(--type-second);
+}
+
+.card-content .card-username {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--type-second);
+  padding-top: 0.3rem;
+}
+
+.card-content .card-location {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--type-first);
+
+  padding-top: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.card-content .card-data {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #ececec;
+  border-bottom: 2px solid #ececec;
+
+  width: 100%;
+}
+
+.card-content .card-data span {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--type-first);
+
+  padding: 0.4rem 0.6rem;
+}
+
+.card-content .card-data span:first {
+  padding: 0.6rem;
+}
+
+.card-footer {
+  width: 100%;
+  padding: 0.6rem 0;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-footer span {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--type-first);
+  padding-right: 0.3rem;
+}
+
+.card-footer span:hover {
+  color: #333;
+  opacity: 0.8;
+}
+
+.footer {
+  padding: 1rem;
+  background-color: #8D99AE;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer span {
+  color: #2B2D42;
+  opacity: 0.8;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--type-second);
+  margin: 0 auto;
+  padding-left: 0.8rem;  
+}
+
+.footer .contact i {
+  font-size: 1.3rem;
+  color: #2B2D42;  
+  cursor: pointer;
+}
+
+.footer .contact i:first-child {
+  padding-right: 0.8rem;
+}
