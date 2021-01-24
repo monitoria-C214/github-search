@@ -67,7 +67,7 @@ export default function Home() {
       </div>
 
       <div className="search">
-        <form className="form" onSubmit={userInput && handleSearchSubmit}>
+        <form className="form" onSubmit={handleSearchSubmit}>
           <input
             className='input'
             type='text'
@@ -82,7 +82,7 @@ export default function Home() {
 
       {loading
         ? <div className="card-loading">
-          <i class="fas fa-spinner" />
+          <i className="fas fa-spinner" />
           <span>Carregando ....</span>
         </div>
         : error
@@ -102,7 +102,7 @@ export default function Home() {
               <div className="card-content">
                 {data.name && <h1 className="card-name">{data.name}</h1>}
                 <span className="card-username">
-                  <i class="fas fa-user" />{data.username}
+                  <i className="fas fa-user" />{data.username}
                 </span>
                 {data.location && <span className="card-location">
                   <i class="fas fa-map-marker-alt" />{data.location}
@@ -110,13 +110,13 @@ export default function Home() {
 
                 <div className="card-data">
                   <span>
-                    <i class="fas fa-user-friends" />{data.following} following
+                    <i className="fas fa-user-friends" />{data.following} following
                 </span>
                   <span>
-                    <i class="fas fa-user-friends" />{data.followers} followers
+                    <i className="fas fa-user-friends" />{data.followers} followers
                 </span>
                   <span>
-                    <i class="fas fa-poll-h" />{data.repos} repos
+                    <i className="fas fa-poll-h" />{data.repos} repos
                 </span>
                 </div>
 

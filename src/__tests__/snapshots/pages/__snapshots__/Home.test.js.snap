@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testes de Snapshot da Home Renderização da tela Home 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="navbar"
+    >
+      <i
+        class="fab fa-github"
+      />
+      <span>
+        GitHub Search
+      </span>
+    </div>
+    <div
+      class="search"
+    >
+      <form
+        class="form"
+      >
+        <input
+          class="input"
+          name="github-user"
+          placeholder="Github username ..."
+          type="text"
+          value=""
+        />
+        <button
+          class="button"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+    <div
+      class="card-loading"
+    >
+      <i
+        class="fas fa-spinner"
+      />
+      <span>
+        Carregando ....
+      </span>
+    </div>
+    <div
+      class="footer"
+    >
+      <span>
+        Created by VSwerts
+      </span>
+      <div
+        class="contact"
+      >
+        <a
+          href="https://github.com/VanessaSwerts"
+        >
+          <i
+            class="fab fa-github-square"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/vanessaswerts/"
+        >
+          <i
+            class="fab fa-linkedin"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
