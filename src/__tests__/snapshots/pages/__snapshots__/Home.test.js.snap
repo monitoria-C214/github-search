@@ -35,6 +35,7 @@ exports[`Testes de Snapshot da Home Renderização da tela Home 1`] = `
       >
         <img
           alt="User Avatar"
+          data-testid="card-avatar"
           src="https://avatars.githubusercontent.com/u/57936?v=4"
         />
       </div>
@@ -43,6 +44,7 @@ exports[`Testes de Snapshot da Home Renderização da tela Home 1`] = `
       >
         <h1
           class="card-name"
+          data-testid="card-name"
         >
           Example
         </h1>
@@ -64,7 +66,11 @@ exports[`Testes de Snapshot da Home Renderização da tela Home 1`] = `
           <i
             class="fas fa-map-marker-alt"
           />
-          location
+          <span
+            data-testid="card-location"
+          >
+            location
+          </span>
         </span>
         <div
           class="card-data"
@@ -73,19 +79,34 @@ exports[`Testes de Snapshot da Home Renderização da tela Home 1`] = `
             <i
               class="fas fa-user-friends"
             />
-            0 following
+            <span
+              data-testid="card-following"
+            >
+              0
+            </span>
+             following
           </span>
           <span>
             <i
               class="fas fa-user-friends"
             />
-            0 followers
+            <span
+              data-testid="card-followers"
+            >
+              0
+            </span>
+             followers
           </span>
           <span>
             <i
               class="fas fa-poll-h"
             />
-            0 repos
+            <span
+              data-testid="card-repos"
+            >
+              0
+            </span>
+             repos
           </span>
         </div>
         <div
