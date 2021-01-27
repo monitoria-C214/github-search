@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testes de Snapshot da Header Renderização da tela Header 1`] = `
+<DocumentFragment>
+  <div
+    class="navbar"
+  >
+    <i
+      class="fab fa-github"
+    />
+    <span>
+      GitHub Search
+    </span>
+  </div>
+</DocumentFragment>
+`;

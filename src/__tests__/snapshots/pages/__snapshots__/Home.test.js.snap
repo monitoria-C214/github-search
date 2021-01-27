@@ -1,130 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Testes de Snapshot da Home Renderização da tela Home 1`] = `
-<div>
+<DocumentFragment>
   <div
-    className="navbar"
-  >
-    <i
-      className="fab fa-github"
-    />
-    <span>
-      GitHub Search
-    </span>
-  </div>
-  <div
-    className="search"
+    class="search"
   >
     <form
-      className="form"
-      onSubmit={[Function]}
+      class="form"
     >
       <input
-        className="input"
+        class="input"
+        data-testid="search-input"
         name="github-user"
-        onChange={[Function]}
-        placeholder="Github username ..."
+        placeholder="Github username..."
         type="text"
         value=""
       />
       <button
-        className="button"
+        class="button"
       >
         Search
       </button>
     </form>
   </div>
   <div
-    className="card"
+    class="card"
   >
     <div
-      className="card-user"
+      class="card-user"
+      data-testid="card-user"
     >
       <div
-        className="card-image"
+        class="card-image"
       >
         <img
           alt="User Avatar"
-          src=""
+          src="https://avatars.githubusercontent.com/u/57936?v=4"
         />
       </div>
       <div
-        className="card-content"
+        class="card-content"
       >
-        
+        <h1
+          class="card-name"
+        >
+          Example
+        </h1>
         <span
-          className="card-username"
+          class="card-username"
         >
           <i
-            className="fas fa-user"
+            class="fas fa-user"
           />
-          
+          <span
+            data-testid="card-username"
+          >
+            username
+          </span>
         </span>
-        
+        <span
+          class="card-location"
+        >
+          <i
+            class="fas fa-map-marker-alt"
+          />
+          location
+        </span>
         <div
-          className="card-data"
+          class="card-data"
         >
           <span>
             <i
-              className="fas fa-user-friends"
+              class="fas fa-user-friends"
             />
-            
-             following
+            0 following
           </span>
           <span>
             <i
-              className="fas fa-user-friends"
+              class="fas fa-user-friends"
             />
-            
-             followers
+            0 followers
           </span>
           <span>
             <i
-              className="fas fa-poll-h"
+              class="fas fa-poll-h"
             />
-            
-             repos
+            0 repos
           </span>
         </div>
         <div
-          className="card-footer"
+          class="card-footer"
         >
           <a
-            href="https://github.com/"
+            href="https://github.com/username"
           >
             <span>
-              GitHub 
-              
+              GitHub username
             </span>
           </a>
         </div>
       </div>
     </div>
   </div>
-  <div
-    className="footer"
-  >
-    <span>
-      Created by VSwerts
-    </span>
-    <div
-      className="contact"
-    >
-      <a
-        href="https://github.com/VanessaSwerts"
-      >
-        <i
-          className="fab fa-github-square"
-        />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/vanessaswerts/"
-      >
-        <i
-          className="fab fa-linkedin"
-        />
-      </a>
-    </div>
-  </div>
-</div>
+</DocumentFragment>
 `;

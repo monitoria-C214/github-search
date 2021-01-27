@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testes de Snapshot da Footer Renderização da tela Footer 1`] = `
+<DocumentFragment>
+  <div
+    class="footer"
+  >
+    <span>
+      Created by VSwerts
+    </span>
+    <div
+      class="contact"
+    >
+      <a
+        href="https://github.com/VanessaSwerts"
+      >
+        <i
+          class="fab fa-github-square"
+        />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/vanessaswerts/"
+      >
+        <i
+          class="fab fa-linkedin"
+        />
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
