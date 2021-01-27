@@ -1,13 +1,12 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { create } from 'react-test-renderer'
 import { Home } from '../../../pages'
 
 describe('Testes de Snapshot da Home', () => {
 
   test('Renderização da tela Home', () => {
-    const { asFragment } = render(<Home />)
+    const tree = create(<Home />)
 
-    expect(asFragment(<Home />)).toMatchSnapshot()
+    expect(tree.toJSON()).toMatchSnapshot()
   })
-
 })

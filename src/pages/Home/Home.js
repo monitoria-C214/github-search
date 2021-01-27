@@ -69,12 +69,16 @@ export default function Home() {
       <div className="search">
         <form className="form" onSubmit={handleSearchSubmit}>
           <input
+            data-testid="search-input"
             className='input'
             type='text'
             name="github-user"
-            placeholder="Github username ..."
+            placeholder="Github username..."
             value={userInput}
-            onChange={({ target }) => setUserInput(target.value)}
+            onChange={({ target }) => {              
+              setUserInput(target.value)
+              console.log(userInput)
+            }}
           />
           <button className="button">Search</button>
         </form>
@@ -83,7 +87,7 @@ export default function Home() {
       {loading
         ? <div className="card-loading">
           <i className="fas fa-spinner" />
-          <span>Carregando ....</span>
+          <span data-testid="message-loading">Carregando ...</span>
         </div>
         : error
           ? <div className="card-error">
@@ -91,7 +95,7 @@ export default function Home() {
             <span>{error}</span>
           </div>
           : <div className="card">
-            <div className="card-user">
+            <div data-testid="card-user" className="card-user">
               <div className="card-image">
                 <img
                   src={data.avatar}
@@ -102,7 +106,8 @@ export default function Home() {
               <div className="card-content">
                 {data.name && <h1 className="card-name">{data.name}</h1>}
                 <span className="card-username">
-                  <i className="fas fa-user" />{data.username}
+                  <i className="fas fa-user" />
+                  <span data-testid="card-username">{data.username}</span>
                 </span>
                 {data.location && <span className="card-location">
                   <i class="fas fa-map-marker-alt" />{data.location}
