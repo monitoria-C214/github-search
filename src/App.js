@@ -1,12 +1,15 @@
 import React from 'react'
 import { Home } from './pages'
+import { CustomHeader, CustomFooter } from './components'
 import './App.css'
 
 function App() {
   return (
-    <div>
+    <>
+      <CustomHeader />      
       <Home />
-    </div>
+      <CustomFooter />
+    </>
   )
 }
 

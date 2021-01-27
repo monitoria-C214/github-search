@@ -1,0 +1,26 @@
+/* Error */
+.card-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+
+  padding: 0;
+  height: 33rem;
+  width: 100%;
+}
+
+.card-error i {
+  font-size: 10rem;
+  color: #2B2D42;
+  padding-bottom: 2rem;
+}
+
+.card-error span {
+  color: #2B2D42;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--type-first);
+  align-items: center;
+  text-align: center;
+}

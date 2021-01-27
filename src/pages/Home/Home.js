@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react"
+import api from '../../services/api'
+import { Error, Loading } from '../../components'
 import './Home.css'
 
 export default function Home() {
@@ -17,14 +19,17 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    setLoading(true)
-    fetch("https://api.github.com/users/example")
-      .then(res => res.json())
-      .then(data => {
-        handleSetData(data)
-        setError(null)
-      })
-  }, [])
+    setData({
+      ...data,
+      name: "Example",
+      username: "username",
+      location: "location",
+      followers: "0",
+      following: "0",
+      repos: "0",
+      avatar: 'https://avatars.githubusercontent.com/u/57936?v=4'
+    })
+  }, []);
 
   const handleSetData = ({ name, login, followers, following, public_repos, avatar_url, location }) => {
     setData({
@@ -41,31 +46,22 @@ export default function Home() {
     setLoading(false)
   }
 
-  const handleSearchSubmit = (e) => {
+  const handleSearchSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
+    setError(null)
 
-    fetch(`https://api.github.com/users/${userInput}`)
-      .then(res => res.json())
-      .then(data => {
-        if (data.message) {
-          setError('Ops, usuário não encontrado!')
-          setLoading(false)
-        }
-        else {
-          handleSetData(data)
-          setError('')
-        }
-      })
+    try {
+      const response = await api.get(`https://api.github.com/users/${userInput}`)
+      if (response.status === 200) handleSetData(response.data)
+    } catch (error) {
+      setError('Ops, usuário não encontrado!')
+      setLoading(false)
+    }
   }
 
   return (
-    <div>
-      <div className="navbar">
-        <i className="fab fa-github"></i>
-        <span>GitHub Search</span>
-      </div>
-
+    <>
       <div className="search">
         <form className="form" onSubmit={handleSearchSubmit}>
           <input
@@ -75,25 +71,17 @@ export default function Home() {
             name="github-user"
             placeholder="Github username..."
             value={userInput}
-            onChange={({ target }) => {              
-              setUserInput(target.value)
-              console.log(userInput)
-            }}
+            onChange={({ target }) => setUserInput(target.value)
+            }
           />
           <button className="button">Search</button>
         </form>
       </div>
 
       {loading
-        ? <div className="card-loading">
-          <i className="fas fa-spinner" />
-          <span data-testid="message-loading">Carregando ...</span>
-        </div>
+        ? <Loading />
         : error
-          ? <div className="card-error">
-            <i className="fas fa-exclamation-triangle" />
-            <span>{error}</span>
-          </div>
+          ? <Error error={error} />
           : <div className="card">
             <div data-testid="card-user" className="card-user">
               <div className="card-image">
@@ -110,19 +98,19 @@ export default function Home() {
                   <span data-testid="card-username">{data.username}</span>
                 </span>
                 {data.location && <span className="card-location">
-                  <i class="fas fa-map-marker-alt" />{data.location}
+                  <i className="fas fa-map-marker-alt" />{data.location}
                 </span>}
 
                 <div className="card-data">
                   <span>
                     <i className="fas fa-user-friends" />{data.following} following
-                </span>
+              </span>
                   <span>
                     <i className="fas fa-user-friends" />{data.followers} followers
-                </span>
+              </span>
                   <span>
                     <i className="fas fa-poll-h" />{data.repos} repos
-                </span>
+              </span>
                 </div>
 
                 <div className="card-footer">
@@ -135,24 +123,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-
       }
-
-
-      <div className="footer">
-        <span>Created by VSwerts</span>
-
-        <div className="contact">
-          <a href="https://github.com/VanessaSwerts" >
-            <i className="fab fa-github-square" />
-          </a>
-
-          <a href="https://www.linkedin.com/in/vanessaswerts/" >
-            <i className="fab fa-linkedin" />
-          </a>
-
-        </div>
-      </div>
-    </div>
+    </>
   )
 }

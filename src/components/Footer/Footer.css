@@ -1,0 +1,52 @@
+/* Footer */
+.card-footer {
+  width: 100%;
+  padding: 0.6rem 0;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-footer span {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--type-first);
+  padding-right: 0.3rem;
+}
+
+.card-footer span:hover {
+  color: #333;
+  opacity: 0.8;
+}
+
+.footer {
+  padding: 1rem;
+  background-color: #8D99AE;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer span {
+  color: #2B2D42;
+  opacity: 0.8;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--type-second);
+  margin: 0 auto;
+  padding-left: 0.8rem;  
+}
+
+.footer .contact i {
+  font-size: 1.3rem;
+  color: #2B2D42;  
+  cursor: pointer;
+}
+
+.footer .contact i:first-child {
+  padding-right: 0.8rem;
+}

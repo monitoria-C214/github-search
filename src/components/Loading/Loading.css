@@ -1,0 +1,33 @@
+/* Loading */
+.card-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+
+  padding: 0;
+  height: 33rem;
+  width: 100%;
+}
+
+.card-loading  i {
+  font-size: 6rem;
+  color: #2B2D42;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+
+.card-loading  span {
+  color: #2B2D42;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: var(--type-first);
+  align-items: center;
+  text-align: center;
+  padding-top: 1rem;
+}
