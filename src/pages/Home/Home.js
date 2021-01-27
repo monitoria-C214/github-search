@@ -1,35 +1,21 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import api from '../../services/api'
 import { Error, Loading } from '../../components'
 import './Home.css'
 
 export default function Home() {
-  const [data, setData] = useState({
-    name: '',
-    username: '',
-    location: '',
-    followers: '',
-    following: '',
-    repos: '',
-    avatar: ''
-  })
-
   const [userInput, setUserInput] = useState('')
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setData({
-      ...data,
-      name: "Example",
-      username: "username",
-      location: "location",
-      followers: "0",
-      following: "0",
-      repos: "0",
-      avatar: 'https://avatars.githubusercontent.com/u/57936?v=4'
-    })
-  }, []);
+  const [data, setData] = useState({
+    name: "Example",
+    username: "username",
+    location: "location",
+    followers: "0",
+    following: "0",
+    repos: "0",
+    avatar: 'https://avatars.githubusercontent.com/u/57936?v=4'
+  })  
 
   const handleSetData = ({ name, login, followers, following, public_repos, avatar_url, location }) => {
     setData({
