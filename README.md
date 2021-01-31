@@ -23,7 +23,7 @@
 
 ## 💻 Sobre o projeto
 
-GitHub Search é um projeto desenvolvido para as aulas de Teste Unitário e Teste Mock da monitoria de Engenharia de Software.
+GitHub Search é um projeto desenvolvido para as aulas de Teste Unitário e Teste Mock da monitoria de Engenharia de Software (C214).
 
 ---
 
@@ -56,6 +56,9 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
     # Execute a aplicação
     $ yarn start
+    
+    #Execute os testes
+    $ yarn test
 
     # O servidor inciará na porta:3000 - acesse http://localhost:3000 .
    ```
