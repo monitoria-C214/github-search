@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import api from '../../services/api'
-import { Error, Loading, Button } from '../../components'
+import { Error, Loading, Button, Card } from '../../components'
 import './Home.css'
 
 export default function Home() {
@@ -37,13 +37,14 @@ export default function Home() {
     setLoading(true)
     setError(null)
 
-    try {
-      const response = await api.get(`https://api.github.com/users/${userInput}`)
-      if (response.status === 200) handleSetData(response.data)
-    } catch (error) {
-      setError('Ops, usuário não encontrado!')
-      setLoading(false)
-    }
+    await api.get(`https://api.github.com/users/${userInput}`)
+      .then(res => {
+        handleSetData(res.data)
+      })
+      .catch(err => {
+        setError('Ops, usuário não encontrado!')
+        setLoading(false)
+      })
   }
 
   return (
@@ -68,52 +69,7 @@ export default function Home() {
         ? <Loading />
         : error
           ? <Error error={error} />
-          : <div className="card">
-            <div data-testid="card-user" className="card-user">
-              <div className="card-image">
-                <img
-                  data-testid="card-avatar"
-                  src={data.avatar}
-                  alt="User Avatar"
-                />
-              </div>
-
-              <div className="card-content">
-                {data.name && <h1 data-testid="card-name" className="card-name">{data.name}</h1>}
-                <span className="card-username">
-                  <i className="fas fa-user" />
-                  <span data-testid="card-username">{data.username}</span>
-                </span>
-                {data.location && <span className="card-location">
-                  <i className="fas fa-map-marker-alt" />
-                  <span data-testid="card-location">{data.location}</span>
-                </span>}
-
-                <div className="card-data">
-                  <span>
-                    <i className="fas fa-user-friends" />
-                    <span data-testid="card-following" >{data.following}</span> following
-                  </span>
-                  <span>
-                    <i className="fas fa-user-friends" />
-                    <span data-testid="card-followers">{data.followers}</span> followers
-                  </span>
-                  <span>
-                    <i className="fas fa-poll-h" />
-                    <span data-testid="card-repos">{data.repos}</span> repos
-                  </span>
-                </div>
-
-                <div className="card-footer">
-                  <a href={`https://github.com/${data.username}`} >
-                    <span>GitHub {data.username}</span>
-                  </a>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
+          : <Card data={data} />
       }
     </>
   )
