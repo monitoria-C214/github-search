@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testes de Snapshot da Button Renderização do componente Button 1`] = `
+<DocumentFragment>
+  <button
+    class="button"
+    data-testid="search-button"
+    type="submit"
+  />
+</DocumentFragment>
+`;

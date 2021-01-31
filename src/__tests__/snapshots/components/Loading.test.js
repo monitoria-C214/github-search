@@ -4,7 +4,7 @@ import { Loading } from '../../../components'
 
 describe('Testes de Snapshot da Loading', () => {
 
-  test('Renderização da tela Loading', () => {
+  test('Renderização do componente Loading', () => {
     const { asFragment } = render(<Loading />)
 
     expect(asFragment(<Loading />)).toMatchSnapshot()

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testes de Snapshot da Footer Renderização da tela Footer 1`] = `
+exports[`Testes de Snapshot da Footer Renderização do componente Footer 1`] = `
 <DocumentFragment>
   <div
     class="footer"

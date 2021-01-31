@@ -4,7 +4,7 @@ import { CustomHeader } from '../../../components'
 
 describe('Testes de Snapshot da Header', () => {
 
-  test('Renderização da tela Header', () => {
+  test('Renderização do componente Header', () => {
     const { asFragment } = render(<CustomHeader />)
 
     expect(asFragment(<CustomHeader />)).toMatchSnapshot()

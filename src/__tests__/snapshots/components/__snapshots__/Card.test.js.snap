@@ -1,31 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testes de Snapshot da Home Renderização da tela Home 1`] = `
+exports[`Testes de Snapshot da Card Renderização do componente Card 1`] = `
 <DocumentFragment>
-  <div
-    class="search"
-  >
-    <form
-      class="form"
-      data-testid="search-form"
-    >
-      <input
-        class="input"
-        data-testid="search-input"
-        name="github-user"
-        placeholder="Github username..."
-        type="text"
-        value=""
-      />
-      <button
-        class="button"
-        data-testid="search-button"
-        type="submit"
-      >
-        Search
-      </button>
-    </form>
-  </div>
   <div
     class="card"
   >

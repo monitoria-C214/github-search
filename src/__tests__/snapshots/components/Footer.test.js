@@ -4,7 +4,7 @@ import { CustomFooter } from '../../../components'
 
 describe('Testes de Snapshot da Footer', () => {
 
-  test('Renderização da tela Footer', () => {
+  test('Renderização do componente Footer', () => {
     const { asFragment } = render(<CustomFooter />)
 
     expect(asFragment(<CustomFooter />)).toMatchSnapshot()
