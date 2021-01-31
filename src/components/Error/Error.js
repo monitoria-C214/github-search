@@ -6,7 +6,7 @@ export default function Error({error}) {
   return (
     <div className="card-error">
       <i className="fas fa-exclamation-triangle" />
-      <span>{error}</span>
+      <span data-testid="message-error">{error}</span>
     </div>
   )
 }
