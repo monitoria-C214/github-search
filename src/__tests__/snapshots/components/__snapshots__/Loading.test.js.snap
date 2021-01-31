@@ -11,7 +11,7 @@ exports[`Testes de Snapshot da Loading Renderização da tela Loading 1`] = `
     <span
       data-testid="message-loading"
     >
-      Carregando ...
+      Carregando...
     </span>
   </div>
 </DocumentFragment>

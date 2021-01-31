@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import api from '../../services/api'
-import { Error, Loading } from '../../components'
+import { Error, Loading, Button } from '../../components'
 import './Home.css'
 
 export default function Home() {
@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <>
       <div className="search">
-        <form className="form" onSubmit={handleSearchSubmit}>
+        <form className="form" data-testid="search-form" onSubmit={handleSearchSubmit}>
           <input
             data-testid="search-input"
             className='input'
@@ -60,7 +60,7 @@ export default function Home() {
             onChange={({ target }) => setUserInput(target.value)
             }
           />
-          <button className="button">Search</button>
+          <Button >Search</Button>
         </form>
       </div>
 

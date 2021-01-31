@@ -7,6 +7,7 @@ exports[`Testes de Snapshot da Home Renderização da tela Home 1`] = `
   >
     <form
       class="form"
+      data-testid="search-form"
     >
       <input
         class="input"
@@ -18,6 +19,8 @@ exports[`Testes de Snapshot da Home Renderização da tela Home 1`] = `
       />
       <button
         class="button"
+        data-testid="search-button"
+        type="submit"
       >
         Search
       </button>
