@@ -9,24 +9,24 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState({
     name: "Example",
-    username: "username",
+    login: "username",
     location: "location",
     followers: "0",
     following: "0",
-    repos: "0",
-    avatar: 'https://avatars.githubusercontent.com/u/57936?v=4'
+    public_repos: "0",
+    avatar_url: 'https://avatars.githubusercontent.com/u/57936?v=4'
   })
 
   const handleSetData = ({ name, login, followers, following, public_repos, avatar_url, location }) => {
     setData({
       ...data,
       name: name,
-      username: login,
+      login: login,
       location: location,
       followers: followers,
       following: following,
-      repos: public_repos,
-      avatar: avatar_url
+      public_repos: public_repos,
+      avatar_url: avatar_url
     })
     setUserInput('')
     setLoading(false)

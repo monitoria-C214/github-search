@@ -15,7 +15,6 @@ exports[`Testes de Snapshot da Card Renderização do componente Card 1`] = `
         <img
           alt="User Avatar"
           data-testid="card-avatar"
-          src="https://avatars.githubusercontent.com/u/57936?v=4"
         />
       </div>
       <div
@@ -35,9 +34,7 @@ exports[`Testes de Snapshot da Card Renderização do componente Card 1`] = `
           />
           <span
             data-testid="card-username"
-          >
-            username
-          </span>
+          />
         </span>
         <span
           class="card-location"
@@ -82,9 +79,7 @@ exports[`Testes de Snapshot da Card Renderização do componente Card 1`] = `
             />
             <span
               data-testid="card-repos"
-            >
-              0
-            </span>
+            />
             repos
           </span>
         </div>
@@ -92,10 +87,10 @@ exports[`Testes de Snapshot da Card Renderização do componente Card 1`] = `
           class="card-footer"
         >
           <a
-            href="https://github.com/username"
+            href="https://github.com/undefined"
           >
             <span>
-              GitHub username
+              GitHub 
             </span>
           </a>
         </div>

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Home } from '../../../pages'
-import { fireEvent, render, screen, waitFor, act } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-
 
 // Vamos mockar a nossa API
 import apiMock from '../../../services/api'
@@ -37,18 +36,18 @@ describe('Teste Unitário da Home', () => {
     // Dados inicializados na aplicação!
     const user = {
       name: "Example",
-      username: "username",
+      login: "username",
       location: "location",
       followers: "0",
       following: "0",
-      repos: "0",
-      avatar: 'https://avatars.githubusercontent.com/u/57936?v=4'
+      public_repos: "0",
+      avatar_url: 'https://avatars.githubusercontent.com/u/57936?v=4'
     }
 
     // Buscamos os componentes que queremos testar
     const avatar = screen.getByTestId('card-avatar')
     const name = screen.getByTestId('card-name')
-    const username = screen.getByTestId('card-username')
+    const login = screen.getByTestId('card-username')
     const location = screen.getByTestId('card-location')
     const following = screen.getByTestId('card-following')
     const followers = screen.getByTestId('card-followers')
@@ -57,12 +56,12 @@ describe('Teste Unitário da Home', () => {
     // Criamos um objeto com os valores iniciais dos componentes.
     const userTest = {
       name: name.textContent,
-      username: username.textContent,
+      login: login.textContent,
       location: location.textContent,
       followers: followers.textContent,
       following: following.textContent,
-      repos: repos.textContent,
-      avatar: avatar.src
+      public_repos: repos.textContent,
+      avatar_url: avatar.src
     }
 
     //Conferimos se os valores do objetos são iguais.
@@ -93,82 +92,87 @@ describe('Teste Unitário da Home', () => {
     // expect(input.value).toBe('VanessaSwerts')
   })
 
-  // it('Ao pesquisar novo usuario, primeiramente mostra o Carregando ...', () => {
-  //   render(<Home />)
+  it('Ao pesquisar novo usuario, primeiramente mostra o Carregando ...', async () => {
+    render(<Home />)
 
-  //   // Objeto que esperamos retornar na promise
-  //   const userSearch = {
-  //     name: "Vanessa Swerts",
-  //     username: "VanessaSwerts",
-  //     location: "Minas Gerais - Brazil",
-  //     followers: "51",
-  //     following: "66",
-  //     repos: "19",
-  //     avatar: 'https://avatars.githubusercontent.com/u/57146734?v=4'
-  //   }
+    // Objeto que esperamos retornar na promise
+    const userSearch = {
+      name: "Vanessa Swerts",
+      login: "VanessaSwerts",
+      location: "Minas Gerais - Brazil",
+      followers: "51",
+      following: "66",
+      public_repos: "19",
+      avatar_url: 'https://avatars.githubusercontent.com/u/57146734?v=4'
+    }
 
-  //   // Chamamos o api mock e simulamos o retorno do objeto
-  //   apiMock.get.mockResolvedValue({ data: userSearch })
+    // Chamamos o api mock e simulamos o retorno do objeto
+    apiMock.get.mockResolvedValue({ data: userSearch })
 
-  //   // Simulamos que o usuário pesquisando um novo o username 
-  //   const input = screen.getByPlaceholderText("Github username...")
-  //   userEvent.type(input, "VanessaSwerts")
+    // Simulamos que o usuário pesquisando um novo o username 
+    const input = screen.getByPlaceholderText("Github username...")    
+    userEvent.type(input, "VanessaSwerts")
 
-  //   const form = screen.getByTestId("search-form")
-  //   fireEvent.submit(form)
+    const form = screen.getByTestId("search-form")        
+    fireEvent.submit(form)
 
-  //   // Pegamos o componente responsável por mostrar a mensagem Carregando
-  //   const loading = screen.getByTestId('message-loading')
+    // Pegamos o componente responsável por mostrar a mensagem Carregando
+    const loading = screen.getByTestId('message-loading')
 
-  //   // Verificamos se ela realmente aparece na tela.
-  //   expect(loading).toHaveTextContent('Carregando...')
-  //   // expect(loading).toBeInTheDocument()
-  // })
+    // Esperamos pelo componente aparecer na tela
+    await waitFor(() => {
+      expect(loading).toBeInTheDocument();
+    });    
+
+    // Verificamos se ela realmente aparece na tela.
+    expect(loading).toHaveTextContent('Carregando...')
+    // expect(loading).toBeInTheDocument()
+  })
 
   it('Após pesquisar, deve mostrar o dados do usuário pesquisado!', async () => {
     render(<Home />)
 
     const userSearch = {
       name: "Vanessa Swerts",
-      // username: "VanessaSwerts",
+      login: "VanessaSwerts",
       location: "Minas Gerais - Brazil",
       followers: "51",
       following: "66",
-      // repos: "19",
-      // avatar: 'https://avatars.githubusercontent.com/u/57146734?v=4'
-    }
+      public_repos: "19",
+      avatar_url: 'https://avatars.githubusercontent.com/u/57146734?v=4'
+    }   
 
     apiMock.get.mockResolvedValue({ data: userSearch })
 
     // Simulando a pesquisa
     const input = screen.getByPlaceholderText("Github username...")
-    fireEvent.change(input, { target: { value: 'VanessaSwerts' } })
+    // fireEvent.change(input, { target: { value: 'VanessaSwerts' } })
+    userEvent.type(input, "VanessaSwerts")
 
     const form = screen.getByTestId("search-form")
     fireEvent.submit(form)
 
     //Esperamos ele encontrar o componente do card
-    // await waitFor(() => expect(apiMock.get).toHaveBeenCalledTimes(1))
-    await screen.findByTestId('card-user')   
+    await screen.findByTestId('card-avatar')   
    
-    // Buscando os valores dos componentes do card
+    // Buscamos os componentes que queremos testar
+    const avatar = screen.getByTestId('card-avatar')
     const name = screen.getByTestId('card-name')
-    // const username = screen.getByTestId('card-username')
+    const login = screen.getByTestId('card-username')
     const location = screen.getByTestId('card-location')
     const following = screen.getByTestId('card-following')
     const followers = screen.getByTestId('card-followers')
-    // const repos = screen.getByTestId('card-repos')
-    // const avatar = screen.getByTestId('card-avatar')
+    const repos = screen.getByTestId('card-repos')
 
-    // Criando objeto com os valores do componente
+    // Criamos um objeto com os valores iniciais dos componentes.
     const userSearchTest = {
       name: name.textContent,
-      // username: username.textContent,
+      login: login.textContent,
       location: location.textContent,
       followers: followers.textContent,
       following: following.textContent,
-      // repos: repos.textContent,
-      // avatar: avatar.src
+      public_repos: repos.textContent,
+      avatar_url: avatar.src
     }
 
     // Conferindo se os valores do componente são iguais ao do retorno da apiMock

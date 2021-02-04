@@ -9,7 +9,7 @@ export default function Card({ data }) {
         <div className="card-image">
           <img
             data-testid="card-avatar"
-            src={data.avatar}
+            src={data.avatar_url}
             alt="User Avatar"
           />
         </div>
@@ -18,7 +18,7 @@ export default function Card({ data }) {
           {data.name && <h1 data-testid="card-name" className="card-name">{data.name}</h1>}
           <span className="card-username">
             <i className="fas fa-user" />
-            <span data-testid="card-username">{data.username}</span>
+            <span data-testid="card-username">{data.login}</span>
           </span>
           {data.location && <span className="card-location">
             <i className="fas fa-map-marker-alt" />
@@ -36,13 +36,13 @@ export default function Card({ data }) {
                   </span>
             <span>
               <i className="fas fa-poll-h" />
-              <span data-testid="card-repos">{data.repos}</span>repos
+              <span data-testid="card-repos">{data.public_repos}</span>repos
             </span>
           </div>
 
           <div className="card-footer">
-            <a href={`https://github.com/${data.username}`} >
-              <span>GitHub {data.username}</span>
+            <a href={`https://github.com/${data.login}`} >
+              <span>GitHub {data.login}</span>
             </a>
 
           </div>
