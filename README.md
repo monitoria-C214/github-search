@@ -38,7 +38,9 @@ GitHub Search é um projeto desenvolvido para as aulas de Teste Unitário e Test
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/)
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
+
+Para configurar o ambiente, [clique aqui!](https://www.notion.so/Configurando-o-Ambiente-React-JS-77e7ee6319404b729172e5b0cd78a082)
 
 #### Executando o projeto
 
