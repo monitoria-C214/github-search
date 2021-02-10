@@ -51,7 +51,7 @@ Para configurar o ambiente, [clique aqui!](https://www.notion.so/Configurando-o-
     $ git clone https://github.com/VanessaSwerts/github-search.git
 
     # Acesse a pasta do projeto no seu terminal/cmd
-    $ cd insta-cakes
+    $ cd github-search
 
     # Instale as dependências
     $ yarn install
