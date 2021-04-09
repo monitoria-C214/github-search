@@ -67,6 +67,82 @@ Para configurar o ambiente, [clique aqui!](https://www.notion.so/Configurando-o-
 
 ---
 
+## 📁 Estrutura de arquivos
+
+Atualizado 08/04/2021
+
+```bash
+github-search
+├─ .gitignore
+├─ LICENSE
+├─ package.json
+├─ public
+│  ├─ favicon.ico
+│  ├─ index.html
+│  ├─ logo192.png
+│  ├─ logo512.png
+│  ├─ manifest.json
+│  └─ robots.txt
+├─ README.md
+├─ src
+│  ├─ App.css
+│  ├─ App.js
+│  ├─ components
+│  │  ├─ Button
+│  │  │  ├─ Button.css
+│  │  │  └─ Button.js
+│  │  ├─ Card
+│  │  │  ├─ Card.css
+│  │  │  └─ Card.js
+│  │  ├─ Error
+│  │  │  ├─ Error.css
+│  │  │  └─ Error.js
+│  │  ├─ Footer
+│  │  │  ├─ Footer.css
+│  │  │  └─ Footer.js
+│  │  ├─ Header
+│  │  │  ├─ Header.css
+│  │  │  └─ Header.js
+│  │  ├─ index.js
+│  │  └─ Loading
+│  │     ├─ Loading.css
+│  │     └─ Loading.js
+│  ├─ index.js
+│  ├─ pages
+│  │  ├─ Home
+│  │  │  ├─ Home.css
+│  │  │  └─ Home.js
+│  │  └─ index.js
+│  ├─ services
+│  │  └─ api.js
+│  ├─ setupTests.js
+│  └─ __tests__
+│     ├─ snapshots
+│     │  ├─ components
+│     │  │  ├─ Button.test.js
+│     │  │  ├─ Card.test.js
+│     │  │  ├─ Error.test.js
+│     │  │  ├─ Footer.test.js
+│     │  │  ├─ Header.test.js
+│     │  │  ├─ Loading.test.js
+│     │  │  └─ __snapshots__
+│     │  │     ├─ Button.test.js.snap
+│     │  │     ├─ Card.test.js.snap
+│     │  │     ├─ Error.test.js.snap
+│     │  │     ├─ Footer.test.js.snap
+│     │  │     ├─ Header.test.js.snap
+│     │  │     └─ Loading.test.js.snap
+│     │  └─ pages
+│     │     ├─ Home.test.js
+│     │     └─ __snapshots__
+│     │        └─ Home.test.js.snap
+│     └─ unit
+│        └─ pages
+│           └─ Home.test.js
+└─ yarn.lock
+
+```
+
 ## 🦸 Autora
 
 <table>
