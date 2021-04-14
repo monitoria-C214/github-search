@@ -14,7 +14,8 @@ describe('Teste Unitário da Home', () => {
   it('Campo search é vazio ao iniciar o site', () => {
     render(<Home />)
 
-    const input = screen.getByTestId('search-input')
+    const input = screen.getByPlaceholderText("Github username...")
+    // getByTestId('search-input')
 
     // expect(input.value).toBe('')
     expect(input).toHaveValue('')
@@ -70,7 +71,7 @@ describe('Teste Unitário da Home', () => {
     // Podemos testar cada valor individualmente, porém não é recomendado ter mais de um expect no teste!
     // expect(avatar).toHaveAttribute("src", "https://avatars.githubusercontent.com/u/57936?v=4")
     // expect(name.textContent).toBe("Example")
-    // expect(username).toHaveTextContent('username')
+    // expect(login).toHaveTextContent('username')
     // expect(location).toHaveTextContent('location')
     // expect(following).toHaveTextContent('0')
     // expect(followers).toHaveTextContent('0')

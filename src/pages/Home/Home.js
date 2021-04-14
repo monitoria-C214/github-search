@@ -32,12 +32,12 @@ export default function Home() {
     setLoading(false)
   }
 
-  const handleSearchSubmit = async (e) => {
+  const handleSearchSubmit = (e) => {
     e.preventDefault()
     setLoading(true)
     setError(null)
 
-    await api.get(`https://api.github.com/users/${userInput}`)
+    api.get(`https://api.github.com/users/${userInput}`)
       .then(res => {
         handleSetData(res.data)
       })
