@@ -8,7 +8,7 @@
 </p>
 
 <h4 align="center"> 
-	🚧 GitHub Search - em desenvolvimento 🚧
+	🚧 GitHub Search - Concluído 🚧
 </h4>
 
 <p align="center">
