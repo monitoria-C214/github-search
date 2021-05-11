@@ -3,6 +3,8 @@
   <a href="https://github.com/VanessaSwerts/github-search/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/VanessaSwerts/github-search">
   </a>
+	
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/VanessaSwerts/github-search/testes-jest)		
     
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">  
  
