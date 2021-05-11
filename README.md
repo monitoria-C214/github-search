@@ -2,12 +2,9 @@
 <p align="center">  
   <a href="https://github.com/VanessaSwerts/github-search/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/VanessaSwerts/github-search">
-  </a>
-	
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/VanessaSwerts/github-search/testes-jest)		
-    
+  </a>    
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">  
- 
+   <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/VanessaSwerts/github-search/testes-jest">	
 </p>
 
 <h4 align="center"> 
