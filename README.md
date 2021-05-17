@@ -24,6 +24,8 @@
 
 GitHub Search é um projeto desenvolvido para as aulas de Teste Unitário e Teste Mock da monitoria de Engenharia de Software (C214).
 
+Acesse o site: [GitHub Search](https://github-search-vs.herokuapp.com)
+
 ---
 
 ## ⚙️ Funcionalidades
